@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.core.mail import send_mail
 
-def home(request):
-	return render(request, 'home.html', {})
+def index(request):
+	return render(request, 'index.html', {})
 
 
 def contact(request):
@@ -16,25 +16,13 @@ def contact(request):
 			message_name, # subject
 			message, # message
 			message_email, # from email
-			['roymogaka@gmail.com'], # to email
+			['serfwet@bk.ru'], # to email
 			)
 
 		return render(request, 'contact.html', {'message_name': message_name})
 
 	else:	
 		return render(request, 'contact.html', {})
-
-
-
-def about(request):
-	return render(request, 'about.html', {})
-
-def pricing(request):
-	return render(request, 'pricing.html', {})
-
-def service(request):
-	return render(request, 'service.html', {})
-
 
 
 def appointment(request):
